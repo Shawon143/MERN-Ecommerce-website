@@ -65,7 +65,7 @@ const AddCar = () => {
   const [color, setColor] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:7000/color")
+    fetch("https://mernecommerce-o4jz.onrender.com/color")
       .then((res) => res.json())
       .then((data) => {
         setColor(data);
@@ -81,7 +81,7 @@ const AddCar = () => {
   const onSubmit = (data) => {
     // console.log(data);
     axios
-      .post("http://localhost:7000/products", data)
+      .post("https://mernecommerce-o4jz.onrender.com/products", data)
       .then((res) => {
         if (res.data.insertedId) {
           alert("Added Successfully");

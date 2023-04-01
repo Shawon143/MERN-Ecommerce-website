@@ -43,7 +43,7 @@ const PlaceOrder = () => {
     const confirm = window.confirm("Are you confirm for your order  ?");
     if (confirm) {
       axios
-        .post("http://localhost:7000/cart", finalCart)
+        .post("https://mernecommerce-o4jz.onrender.com/cart", finalCart)
         .then((response) => {
           if (response.data.insertedId) {
             alert("Order Successfully");
@@ -64,7 +64,7 @@ const PlaceOrder = () => {
   /*  const onSubmit = (data) => {
     // console.log(data);
     axios
-      .post("http://localhost:7000/cart", data)
+      .post("https://mernecommerce-o4jz.onrender.com/cart", data)
       .then((res) => {
         if (res.data.insertedId) {
           alert("Added Successfully");

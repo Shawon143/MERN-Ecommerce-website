@@ -30,7 +30,7 @@ const Login = () => {
 
   const saveUser = (email, displayName) => {
     const user = { email, displayName };
-    fetch("http://localhost:7000/users", {
+    fetch("https://mernecommerce-o4jz.onrender.com/users", {
       method: "PUT",
       headers: {
         "content-type": "application/json",

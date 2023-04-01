@@ -15,7 +15,7 @@ import useAuth from "./hooks/useAuth";
 import { Button } from "./styles/Button";
 import { useLocation, useNavigate } from "react-router-dom";
 
-// const API = "http://localhost:7000/products";
+// const API = "https://mernecommerce-o4jz.onrender.com/products";
 
 const SingleProduct = () => {
   const { getSingleProduct, isSingleLoading, singleProduct } =
@@ -41,13 +41,13 @@ const SingleProduct = () => {
   } = singleProduct;
 
   useEffect(() => {
-    getSingleProduct(`http://localhost:7000/products/${id}`);
+    getSingleProduct(`https://mernecommerce-o4jz.onrender.com/products/${id}`);
   }, []);
 
   const handleDelete = (id) => {
     const confirm = window.confirm("Are you sure for you delete this car ?");
     if (confirm) {
-      fetch(`http://localhost:7000/products/${id}`, {
+      fetch(`https://mernecommerce-o4jz.onrender.com/products/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())

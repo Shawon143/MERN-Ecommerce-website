@@ -8,7 +8,7 @@ const AddColor = () => {
   const onSubmit = (data) => {
     console.log(data);
     axios
-      .post("http://localhost:7000/color", data)
+      .post("https://mernecommerce-o4jz.onrender.com/color", data)
       .then((res) => {
         if (res.data.insertedId) {
           alert("Added Successfully");

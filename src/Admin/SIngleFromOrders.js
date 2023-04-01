@@ -42,7 +42,7 @@ const SIngleFromOrders = (props) => {
 
   const updatehandle = (e) => {
     console.log(e);
-    const url = `http://localhost:7000/cart/${_id}`;
+    const url = `https://mernecommerce-o4jz.onrender.com/cart/${_id}`;
     console.log(url);
     fetch(url, {
       method: "PUT",

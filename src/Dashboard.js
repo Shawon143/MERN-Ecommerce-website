@@ -118,7 +118,7 @@ const Dashboard = () => {
   const { user } = useAuth();
   const [order, setOrder] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:7000/carts?email=${user.email}`)
+    fetch(`https://mernecommerce-o4jz.onrender.com/carts?email=${user.email}`)
       .then((res) => res.json())
       .then((data) => setOrder(data));
   }, [user.email]);
@@ -129,7 +129,7 @@ const Dashboard = () => {
   const handleDelete = (id) => {
     const confirm = window.confirm("Are you sure for you delete this car ?");
     if (confirm) {
-      fetch(`http://localhost:7000/cart/${id}`, {
+      fetch(`https://mernecommerce-o4jz.onrender.com/cart/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())

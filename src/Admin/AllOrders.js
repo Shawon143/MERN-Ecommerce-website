@@ -12,7 +12,7 @@ const AllOrders = () => {
   const [load, setLoad] = useState(false);
 
   useEffect(() => {
-    fetch("http://localhost:7000/cart")
+    fetch("https://mernecommerce-o4jz.onrender.com/cart")
       .then((res) => res.json())
       .then((data) => {
         setAllorders(data);

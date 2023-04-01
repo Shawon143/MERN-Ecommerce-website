@@ -14,7 +14,7 @@ const Update = () => {
   const [selectedColors, setSelectedColors] = useState([]);
   const [color, setColor] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:7000/color")
+    fetch("https://mernecommerce-o4jz.onrender.com/color")
       .then((res) => res.json())
       .then((data) => {
         setColor(data);
@@ -45,11 +45,11 @@ const Update = () => {
   } = singleProduct;
 
   useEffect(() => {
-    getSingleProduct(`http://localhost:7000/products/${id}`);
+    getSingleProduct(`https://mernecommerce-o4jz.onrender.com/products/${id}`);
   }, []);
 
   const updatehandle = (e) => {
-    const url = `http://localhost:7000/products/${id}`;
+    const url = `https://mernecommerce-o4jz.onrender.com/products/${id}`;
     fetch(url, {
       method: "PUT",
       headers: {

@@ -5,7 +5,8 @@ import reducer from "../reducer/productReducer";
 const AppContext = createContext();
 
 // const API = "https://api.pujakaitem.com/api/products";
-const API = "http://localhost:7000/products";
+// const API = "https://mernecommerce-o4jz.onrender.com/products";
+const API = "https://mernecommerce-o4jz.onrender.com/products";
 
 const initialState = {
   isLoading: false,
