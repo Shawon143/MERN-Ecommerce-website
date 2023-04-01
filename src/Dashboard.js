@@ -141,6 +141,18 @@ const Dashboard = () => {
         });
     }
   };
+  if (reversedData.length === 0) {
+    return (
+      <DashboardContainer>
+        <DashboardHeader>
+          <h2>
+            <span style={{ color: "Red" }}>{user.displayName}</span> Dashboard
+          </h2>
+          <h3>Your Order: {reversedData.length}</h3>
+        </DashboardHeader>
+      </DashboardContainer>
+    );
+  }
 
   return (
     <DashboardContainer>
@@ -154,16 +166,19 @@ const Dashboard = () => {
           return (
             <OrderContainer>
               <OrderDetails>
-                <p style={{ fontWeight: "bold" }}>
+                <p style={{ fontWeight: "bold", color: "black" }}>
+                  Date : {curElem.formData.date}
+                </p>
+                <p style={{ fontWeight: "bold", color: "black" }}>
                   Your Name : {curElem.formData.name}
                 </p>
-                <p style={{ fontWeight: "bold" }}>
+                <p style={{ fontWeight: "bold", color: "black" }}>
                   Your Email : {curElem.formData.email}
                 </p>
-                <p style={{ fontWeight: "bold" }}>
+                <p style={{ fontWeight: "bold", color: "black" }}>
                   Your Address : {curElem.formData.address}
                 </p>
-                <p style={{ fontWeight: "bold" }}>
+                <p style={{ fontWeight: "bold", color: "black" }}>
                   Your Number : {curElem.formData.number}
                 </p>
               </OrderDetails>

@@ -38,7 +38,7 @@ const StyledCol = styled(Col)`
 
 const SIngleFromOrders = (props) => {
   const { email, finalprice, status, _id } = props.service;
-  const { name, address, number } = props.service.formData;
+  const { name, address, number, date } = props.service.formData;
 
   const updatehandle = (e) => {
     console.log(e);
@@ -66,6 +66,11 @@ const SIngleFromOrders = (props) => {
       <Card>
         <Card.Body>
           {/* <StyledCardTitle>{_id}</StyledCardTitle> */}
+          <StyledCardText>
+            <h3 style={{ color: "green", fontWeight: "bold" }}>
+              <span className="text-success">Date :</span> {date}
+            </h3>
+          </StyledCardText>
           <StyledCardText>
             <h3 style={{ color: "black", fontWeight: "bold" }}>
               <span className="text-success">Name :</span> {name}

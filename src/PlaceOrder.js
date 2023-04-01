@@ -16,6 +16,14 @@ const PlaceOrder = () => {
 
   const userEmail = user.email;
   const statuscode = "Pending";
+  const date = new Date();
+  const options = {
+    weekday: "short",
+    month: "short",
+    day: "2-digit",
+    year: "numeric",
+  };
+  const formattedDate = date.toLocaleString("en-US", options);
 
   const {
     register,
@@ -92,6 +100,12 @@ const PlaceOrder = () => {
             {...register("number", { required: true })}
             placeholder="Your phone number"
           />
+          <FormInput
+            value={formattedDate}
+            {...register("date", { required: true })}
+            placeholder="date"
+            readOnly
+          />
           <FormSubmitButton type="submit" value="Submit" />
         </Form>
       </FormContainer>
@@ -125,20 +139,6 @@ const FormInput = styled.input`
   margin-bottom: 1rem;
   border: none;
   border-radius: 0.25rem;
-`;
-
-const FormSelect = styled.select`
-  width: 100%;
-  padding: 0.5rem;
-  margin-bottom: 1rem;
-  border: none;
-  border-radius: 0.25rem;
-`;
-
-const FormLabel = styled.label`
-  margin: 1rem 0;
-  color: black;
-  font-size: 18px;
 `;
 
 const FormSubmitButton = styled.input`

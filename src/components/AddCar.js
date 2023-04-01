@@ -96,24 +96,56 @@ const AddCar = () => {
     <FormContainer>
       <FormHeader>ADD A CAR</FormHeader>
       <Form onSubmit={handleSubmit(onSubmit)}>
-        <FormInput {...register("id")} placeholder="id" />
-        <FormInput {...register("name")} placeholder="name" />
-        <FormInput {...register("company")} placeholder="company" />
-        <FormInput {...register("price")} placeholder="price" type="number" />
-        <FormInput {...register("description")} placeholder="description" />
-        <FormInput {...register("category")} placeholder="catagory" />
-        <FormInput {...register("imgA")} placeholder="imgA" />
-        <FormInput {...register("imgB")} placeholder="imgB" />
-        <FormInput {...register("imgC")} placeholder="imgC" />
-        <FormInput {...register("imgD")} placeholder="imgD" />
-        <FormInput {...register("stock")} placeholder="stock" type="number" />
+        <FormInput {...register("id", { required: true })} placeholder="id" />
+        <FormInput
+          {...register("name", { required: true })}
+          placeholder="name"
+        />
+        <FormInput
+          {...register("company", { required: true })}
+          placeholder="company"
+        />
+        <FormInput
+          {...register("price", { required: true })}
+          placeholder="price"
+          type="number"
+        />
+        <FormInput
+          {...register("description", { required: true })}
+          placeholder="description"
+        />
+        <FormInput
+          {...register("category", { required: true })}
+          placeholder="catagory"
+        />
+        <FormInput
+          {...register("imgA", { required: true })}
+          placeholder="imgA"
+        />
+        <FormInput
+          {...register("imgB", { required: true })}
+          placeholder="imgB"
+        />
+        <FormInput
+          {...register("imgC", { required: true })}
+          placeholder="imgC"
+        />
+        <FormInput
+          {...register("imgD", { required: true })}
+          placeholder="imgD"
+        />
+        <FormInput
+          {...register("stock", { required: true })}
+          placeholder="stock"
+          type="number"
+        />
         <FormLabel htmlFor="colors">Colors:</FormLabel>
         <FormSelect
           id="colors"
           name="colors"
           multiple
           onChange={handleColorChange}
-          {...register("colors")}
+          {...register("colors", { required: true }, { required: true })}
         >
           {color.map((curElem) => {
             return (

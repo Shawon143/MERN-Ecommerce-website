@@ -75,53 +75,53 @@ const Update = () => {
       <Form onSubmit={handleSubmit(updatehandle)}>
         <FormInput {...register("id")} placeholder="id" value={alias} />
         <FormInput
-          {...register("name")}
+          {...register("name", { required: true })}
           defaultValue={name}
           placeholder="name"
         />
         <FormInput
-          {...register("company")}
+          {...register("company", { required: true })}
           placeholder="company"
           defaultValue={company}
         />
         <FormInput
-          {...register("price")}
+          {...register("price", { required: true })}
           placeholder="price"
           type="number"
           defaultValue={price}
         />
         <FormInput
-          {...register("description")}
+          {...register("description", { required: true })}
           placeholder="description"
           defaultValue={description}
         />
         <FormInput
-          {...register("category")}
+          {...register("category", { required: true })}
           placeholder="catagory"
           defaultValue={category}
         />
         <FormInput
-          {...register("imgA")}
+          {...register("imgA", { required: true })}
           placeholder="imgA"
           defaultValue={imgA}
         />
         <FormInput
-          {...register("imgB")}
+          {...register("imgB", { required: true })}
           placeholder="imgB"
           defaultValue={imgB}
         />
         <FormInput
-          {...register("imgC")}
+          {...register("imgC", { required: true })}
           placeholder="imgC"
           defaultValue={imgC}
         />
         <FormInput
-          {...register("imgD")}
+          {...register("imgD", { required: true })}
           placeholder="imgD"
           defaultValue={imgD}
         />
         <FormInput
-          {...register("stock")}
+          {...register("stock", { required: true })}
           placeholder="stock"
           type="number"
           defaultValue={stock}
@@ -132,7 +132,7 @@ const Update = () => {
           name="colors"
           multiple
           onChange={handleColorChange}
-          {...register("colors")}
+          {...register("colors", { required: true })}
         >
           {color.map((curElem) => {
             return (
