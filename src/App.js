@@ -23,6 +23,9 @@ import AllOrders from "./Admin/AllOrders";
 import ManageProducts from "./Admin/ManageProducts";
 import Update from "./Admin/Update";
 import Addcolor from "./Admin/Addcolor";
+
+import AdminRoute from "./AdminRoute";
+import PrivateRoute from "./PrivateRoute";
 // import PrivateRoute from "./PrivateRoute";
 // import AddCar from "./components/AddCar";
 
@@ -61,23 +64,31 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/products" element={<Products />} />
-          <Route path="/makeadmin" element={<MakeAdmin />} />
-          <Route path="/manageorders" element={<AllOrders />} />
-          <Route path="/manageproducts" element={<ManageProducts />} />
-          <Route path="/addcolor" element={<Addcolor />} />
 
-          <Route path="/contact" element={<Contact />} />
-          {/* <PrivateRoute path="/contact" element={<Contact />} /> */}
+          {/* <Route path="/contact" element={<Contact />} /> */}
+
+          <Route element={<Contact />} path="/contact" />
+          <Route element={<AdminRoute />}>
+            <Route path="/admindashboard" element={<AdminDashboard />} />
+            <Route path="/makeadmin" element={<MakeAdmin />} />
+            <Route path="/addcar" element={<AddCar />} />
+            <Route path="/addcolor" element={<Addcolor />} />
+            <Route path="update/:id" element={<Update />} />
+            <Route path="/manageproducts" element={<ManageProducts />} />
+            <Route path="/manageorders" element={<AllOrders />} />
+          </Route>
+          <Route element={<PrivateRoute />}>
+            <Route path="/placeorder" element={<PlaceOrder />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+          </Route>
           <Route path="/login" element={<Login />} />
-          {/* <Route path="/testProducts" element={<TestProduct />} /> */}
-          <Route path="/addcar" element={<AddCar />} />
-          <Route path="/placeorder" element={<PlaceOrder />} />
           <Route path="/singleproduct/:id" element={<SingleProduct />} />
-          <Route path="update/:id" element={<Update />} />
-          {/* <Route path="/singletest/:id" element={<SingleTest />} /> */}
+          <Route
+            path="/singleproduct/:id/related"
+            element={<SingleProduct />}
+          />
           <Route path="/cart" element={<Cart />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/admindashboard" element={<AdminDashboard />} />
+
           <Route path="*" element={<ErrorPage />} />
         </Routes>
         <Footer />

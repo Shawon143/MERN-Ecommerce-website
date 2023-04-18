@@ -1,8 +1,20 @@
 import React from "react";
-import styled from "styled-components";
+
 import Product from "./Product";
+import styled, { keyframes } from "styled-components";
+import { useProductContext } from "../context/productcontex";
 
 const GridView = ({ products }) => {
+  const { isSingleLoading } = useProductContext();
+
+  if (isSingleLoading) {
+    return (
+      <SpinnerContainer>
+        <Spinner />
+      </SpinnerContainer>
+    );
+  }
+
   return (
     <Wrapper className="section">
       <div className="container grid grid-three-column">
@@ -105,4 +117,24 @@ const Wrapper = styled.section`
   }
 `;
 
+const spin = keyframes`
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+`;
+
+const SpinnerContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+`;
+
+const Spinner = styled.div`
+  border: 0.2rem solid rgba(0, 0, 0, 0.1);
+  border-top-color: #007bff;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  animation: ${spin} 0.6s linear infinite;
+`;
 export default GridView;

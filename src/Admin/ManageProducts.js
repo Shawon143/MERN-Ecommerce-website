@@ -5,7 +5,7 @@ import { Button } from "../styles/Button";
 import ManageProduct from "./ManageProduct";
 
 const ManageProducts = () => {
-  const { filter_products, grid_view } = useFilterContext();
+  const { filter_products } = useFilterContext();
 
   return (
     <div>

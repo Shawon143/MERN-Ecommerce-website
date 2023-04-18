@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import styled, { keyframes } from "styled-components";
-import { NavLink, useParams, Route, Routes } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import { useProductContext } from "./context/productcontex";
 import PageNavigation from "./components/PageNavigation";
 import MyImage from "./components/MyImage";
@@ -19,7 +19,7 @@ import RelatedProduct from "./RelatedProduct/RelatedProduct";
 
 // const API = "https://mernecommerce-o4jz.onrender.com/products";
 
-const SingleProduct = () => {
+const RelatedProducts = () => {
   const { getSingleProduct, isSingleLoading, singleProduct } =
     useProductContext();
   const { admin } = useAuth();
@@ -154,13 +154,11 @@ const SingleProduct = () => {
             )}
           </div>
         </div>
-        <RelatedProduct product={singleProduct} brand={company} />
-        <Routes>
-          <Route
-            path="/singleproduct/:id/related"
-            element={<RelatedProduct product={singleProduct} brand={company} />}
-          />
-        </Routes>
+
+        <RelatedProduct
+          product={singleProduct}
+          brand={company}
+        ></RelatedProduct>
       </Container>
     </Wrapper>
   );
@@ -272,4 +270,4 @@ const Wrapper = styled.section`
   }
 `;
 
-export default SingleProduct;
+export default RelatedProducts;
